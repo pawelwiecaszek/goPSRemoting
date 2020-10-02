@@ -66,7 +66,7 @@ func RunPowershellCommand(username string, password string, server string, comma
 		if errconn != nil {
 			panic(errconn)
 		}
-		output, err = session.CombinedOutput("pwsh -Command " + command)
+		output, err = session.CombinedOutput("pwsh -Command '" + command + "'")
 		out = string(output)
 		client.Close()
 	} else {
